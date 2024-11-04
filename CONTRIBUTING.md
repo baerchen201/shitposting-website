@@ -1,8 +1,8 @@
 ## how to contibut
 
-1. fork repo
-2. add stuff
-3. create pull request
-4. done
+1. make fork
+2. do somethign
+3. request a pulling
+4. horay :}
 
 ![👍](/bluemoji/yellow/checking-out.png)

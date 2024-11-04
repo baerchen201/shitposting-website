@@ -7,13 +7,12 @@
       "option": "watch",
       "problemMatcher": ["$tsc-watch"],
       "group": "build",
-      "label": "tsc: watch - tsconfig.json",
+      "label": "live gogol translaet",
       "runOptions": { "runOn": "folderOpen" },
       "presentation": {
         "reveal": "never",
-        "panel": "shared",
-        "showReuseMessage": true,
-        "clear": true
+        "panel": "dedicated",
+        "showReuseMessage": true
       }
     }
   ]

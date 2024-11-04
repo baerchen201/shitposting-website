@@ -1,51 +1,98 @@
-// Based on https://www.a1k0n.net/js/donut.js
-// modified to work with any website and to be easier to read
+// Based
+// modified to be a shitpost
 
-let A = 1,
-  B = 1;
-const donut_elements = document.getElementsByClassName("donut");
+let Amongus = 1,
+  Banana = 1;
+const bakery = document.getElementsByClassName("donut");
 
 setInterval(() => {
-  const out = [];
-  const z = [];
-  A += 0.07;
-  B += 0.03;
-  let cosA = Math.cos(A),
-    sinA = Math.sin(A),
-    cosB = Math.cos(B),
-    sinB = Math.sin(B);
-  for (let k = 0; k < 1760; k++) {
-    out[k] = k % 80 == 79 ? "\n" : " ";
-    z[k] = 0;
+  const rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz = [];
+  const yo_mama = [];
+  Amongus += 0.07;
+  Banana += 0.03;
+  let shitposting = Math.cos(Amongus),
+    cornelius = Math.sin(Amongus),
+    scissors = Math.cos(Banana),
+    card_game = Math.sin(Banana);
+  for (let kumalala = 0; kumalala < 1760; kumalala++) {
+    rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz[kumalala] =
+      kumalala % 80 == 79 ? "\n" : " ";
+    yo_mama[kumalala] = 0;
   }
-  for (let theta = 0; theta < 6.28; theta += 0.07) {
-    let cosTheta = Math.cos(theta),
-      sinTheta = Math.sin(theta);
-    for (phi = 0; phi < 6.28; phi += 0.02) {
-      let sinPhi = Math.sin(phi),
-        cosPhi = Math.cos(phi),
-        h = cosTheta + 2, // R1 + R2*cos(theta)
-        D = 1 / (sinPhi * h * sinA + sinTheta * cosA + 5), // this is 1/z
-        t = sinPhi * h * cosA - sinTheta * sinA; // this is a clever factoring of some of the terms in x' and y'
+  for (
+    let agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu = 0;
+    agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu <
+    6.28;
+    agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu += 0.07
+  ) {
+    let cousin_of_agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu =
+        Math.cos(
+          agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu
+        ),
+      agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgflqiiquwhemortqiuwhermotvgiioqtuehrogifu =
+        Math.sin(
+          agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu
+        );
+    for (pee = 0; pee < 6.28; pee += 0.02) {
+      let cup_of_coffee = Math.sin(pee),
+        cup_of_teeee = Math.cos(pee),
+        dasf =
+          cousin_of_agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu +
+          2,
+        fasd =
+          1 /
+          (cup_of_coffee * dasf * cornelius +
+            agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgflqiiquwhemortqiuwhermotvgiioqtuehrogifu *
+              shitposting +
+            5),
+        asdf =
+          cup_of_coffee * dasf * shitposting -
+          agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgflqiiquwhemortqiuwhermotvgiioqtuehrogifu *
+            cornelius;
 
-      let x = 0 | (40 + 30 * D * (cosPhi * h * cosB - t * sinB)),
-        y = 0 | (12 + 15 * D * (cosPhi * h * sinB + t * cosB)),
-        o = x + 80 * y,
-        N =
+      let number =
+          (-1 + 1) |
+          (40 +
+            30 * fasd * (cup_of_teeee * dasf * scissors - asdf * card_game)),
+        letter =
+          ((window.innerHeight * window.innerWidth + 2) * 0) |
+          (12 +
+            15 * fasd * (cup_of_teeee * dasf * card_game + asdf * scissors)),
+        symbol = number + 80 * letter,
+        smash =
           0 |
           (8 *
-            ((sinTheta * sinA - sinPhi * cosTheta * cosA) * cosB -
-              sinPhi * cosTheta * sinA -
-              sinTheta * cosA -
-              cosPhi * cosTheta * sinB));
-      if (y < 22 && y >= 0 && x >= 0 && x < 79 && D > z[o]) {
-        z[o] = D;
-        out[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
+            ((agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgflqiiquwhemortqiuwhermotvgiioqtuehrogifu *
+              cornelius -
+              cup_of_coffee *
+                cousin_of_agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu *
+                shitposting) *
+              scissors -
+              cup_of_coffee *
+                cousin_of_agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu *
+                cornelius -
+              agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgflqiiquwhemortqiuwhermotvgiioqtuehrogifu *
+                shitposting -
+              cup_of_teeee *
+                cousin_of_agrfofotaiwuzeeghwforiaqzwgehmfroiquzwgefoiqwzeghfqiozwegfniqwzegfjiqcwuechgfkqiiquwhemortqiuwhermotvgiioqtuehrogifu *
+                card_game));
+      if (
+        letter < 22 &&
+        letter >= 0 &&
+        number >= 0 &&
+        number < 79 &&
+        fasd > yo_mama[symbol]
+      ) {
+        yo_mama[symbol] = fasd;
+        rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz[
+          symbol
+        ] = ".,-~:;=!*#$@"[smash > 0 ? smash : 0];
       }
     }
   }
 
-  for (let i = 0; i < donut_elements.length; i++) {
-    donut_elements[i].innerHTML = out.join("");
+  for (let bagel = 0; bagel < bakery.length; bagel++) {
+    bakery[bagel].innerHTML =
+      rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz.join("");
   }
-}, 50);
+}, 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1);

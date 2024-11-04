@@ -13,21 +13,7 @@
     <h1>Hello, World!</h1>
     <hr />
 
-    <h2 class="google">Google</h2>
-    <input
-      type="text"
-      id="google"
-      class="google"
-      placeholder="Google something here idk ..."
-    />
-    <button
-      class="google"
-      onclick="document.getElementById('google').dispatchEvent(new KeyboardEvent('keypress',{key:'Enter'}))"
-    >
-      Search
-    </button>
     <script src="js/index.js"></script>
-    <hr class="google" />
 
     <h2>Donut</h2>
     <div class="donut">
@@ -57,132 +43,12 @@
     <script src="donut.js"></script>
     <hr />
 
-    <h2 style="text-transform: lowercase">I use Arch, btw</h2>
-    <img
-      style="width: 800px"
-      src="img/i_use_arch_btw.png"
-      alt="< Ancient monitor showing the iconic Arch Linux neofetch >"
-    />
-    <hr />
-
-    <img src="img/IMG_0585.png" alt="< Cursed emoji >" class="cursed" />
-    <img src="img/IMG_0586.png" alt="< Cursed plush >" class="cursed" />
-    <hr />
-
-    <h2>cat go meow</h2>
-    <span style="height: 0; width: 0; overflow: hidden">
-      <!-- Preloading for smooth animation / audio playback -->
-      <img src="other/deltarune-explosion/2.png" loading="eager" />
-      <img src="other/deltarune-explosion/4.png" loading="eager" />
-      <img src="other/deltarune-explosion/6.png" loading="eager" />
-      <img src="other/deltarune-explosion/8.png" loading="eager" />
-      <img src="other/deltarune-explosion/10.png" loading="eager" />
-      <img src="other/deltarune-explosion/12.png" loading="eager" />
-      <img src="other/deltarune-explosion/14.png" loading="eager" />
-      <img src="other/deltarune-explosion/16.png" loading="eager" />
-      <img src="other/deltarune-explosion/18.png" loading="eager" />
-    </span>
-    <div id="cat">
-      <div>
-        <img src="img/cat.svg" alt="< Scratch Cat >" />
-        <img
-          src=""
-          style="
-            display: none;
-            transform: scale(2.25);
-            pointer-events: none;
-            user-select: none;
-          "
-        />
-      </div>
-      <span>
-        <button>explode</button>
-        <button>meow</button>
-      </span>
-      <audio
-        id="aud-explode"
-        src="other/deltarune-explosion/deltarune-explosion.mp3"
-        preload="auto"
-      ></audio>
-      <audio id="aud-mewo" src="aud/mewo.wav" preload="auto"></audio>
-      <audio id="aud-pop" src="aud/pop-long.wav" preload="auto"></audio>
-    </div>
-    <hr />
-
-    <h2>Peak videos</h2>
-    <div id="videos">
-      <youtube-video
-        data-id="0XjRRKaMnWI"
-        data-thumbnail="%smaxresdefault.jpg"
-        data-channel-icon="img/channels4_profile.jpg"
-        data-title="Ein Video über Deutschland"
-        data-channel="Jules"
-      >
-      </youtube-video>
-      <youtube-video data-id="dQw4w9WgXcQ"></youtube-video>
-      <youtube-video
-        data-id="aFPJf-wKTd0"
-        data-thumbnail="%smaxresdefault.jpg"
-        data-channel-icon="img/unnamed.jpg"
-        data-title="How Hidden Technology Transformed Bowling"
-        data-channel="Veritasium"
-      >
-      </youtube-video>
-    </div>
-    <hr />
-
-    <h2>Peak music</h2>
-    <div id="music">
-      <youtube-track
-        data-id="god7hAPv8f0"
-        data-image="%smaxresdefault.jpg"
-        data-title="Boogie Wonderland"
-        data-composer="Earth Wind & Fire"
-      ></youtube-track>
-      <youtube-track
-        data-id="pktEj1a1Vts"
-        data-image="%smaxresdefault.jpg"
-        data-title="Shikanoko Nokonoko Koshitantan (Eurobeat Remix)"
-        data-composer="Shikabu / Keisari"
-      ></youtube-track>
-      <youtube-track
-        data-id="TO4KTxv7_4w"
-        data-image="%smaxresdefault.jpg"
-        data-title="Ultimate Battle"
-        data-composer="Laura Shigihara"
-      ></youtube-track>
-      <youtube-track
-        data-id="q5rliCxX8xc"
-        data-image="%s0.jpg"
-        data-title="Glue"
-        data-composer="Bicep"
-      ></youtube-track>
-      <youtube-track
-        data-id="xTemcPZw8Eo"
-        data-image="%smaxresdefault.jpg"
-        data-title="Free Bird (Eurobeat Remix)"
-        data-composer="Lynyrd Skynyrd / Vikas Music"
-      ></youtube-track>
-      <youtube-track
-        data-id="LYCYoSiqgqA"
-        data-image="%smaxresdefault.jpg"
-        data-title="oiia oiia spinning cat"
-      ></youtube-track>
-      <youtube-track
-        data-id="5q0KEnIbb3w"
-        data-image="%smaxresdefault.jpg"
-        data-title="Someone Special"
-        data-composer="tomatoism"
-      ></youtube-track>
-    </div>
-    <hr />
-
-    <h2>Amongus</h2>
+    <h2>Amogus</h2>
     <img
       src="img/Red_Amogus.png"
       alt="< [Red amongus] Get Among Us >"
       onclick="document.getElementById('amongus').style.display='flex'"
-      style="cursor: pointer; height: 450px"
+      style="cursor: pointer; height: 300px"
     />
     <div id="amongus" onclick="if(event.target==this)this.style.display=''">
       <div>
@@ -267,9 +133,39 @@
     </button>
     <hr />
 
+    <h2>Peak videos</h2>
+    <div id="videos">
+      <youtube-video data-id="dQw4w9WgXcQ"></youtube-video>
+    </div>
+    <hr />
+
     <h2>Emoji Shuffler</h2>
     <img id="emoji" />
     <div id="emoji-history"></div>
+    <hr />
+
+    <h2>Peak music</h2>
+    <div id="music">
+      <youtube-track
+        data-id="TO4KTxv7_4w"
+        data-image="%smaxresdefault.jpg"
+        data-title="Ultimate Battle"
+        data-composer="Laura Shigihara"
+      ></youtube-track>
+      <youtube-track
+        data-id="LYCYoSiqgqA"
+        data-image="%smaxresdefault.jpg"
+        data-title="oiia oiia spinning cat"
+      ></youtube-track>
+    </div>
+    <hr />
+
+    <h2 style="text-transform: lowercase">I use Arch, btw</h2>
+    <img
+      style="height: 350px"
+      src="img/i_use_arch_btw.png"
+      alt="< ancient ahh pc running arch >"
+    />
     <hr />
 
     <button

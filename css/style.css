@@ -61,20 +61,6 @@ hr {
   margin: 20px 0;
 }
 
-#google {
-  width: 100%;
-  font-size: 1em;
-  font-family: ubuntu_r, system-ui;
-  padding: 10px 5px;
-  border-radius: 20px;
-  margin-bottom: 8px;
-}
-button.google {
-  height: 40px;
-  min-width: 100px;
-  cursor: pointer;
-}
-
 .donut {
   white-space: pre;
   font-family: Consolas, monospace;
@@ -243,6 +229,8 @@ youtube-track > a > span:nth-of-type(2) {
 #textmongus {
   display: flex;
   flex-direction: column;
+  font-size: small;
+  user-select: none;
 }
 #textmongus > span {
   white-space: pre;
@@ -325,33 +313,4 @@ youtube-track > a > span:nth-of-type(2) {
 }
 #emoji-history > img {
   width: 100px;
-}
-
-#cat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#cat > div {
-  position: relative;
-  width: 200px;
-  height: 300px;
-}
-#cat > div > img {
-  position: absolute;
-  width: 100%;
-}
-#cat > span {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 200%;
-}
-#cat button {
-  font-size: 30px;
-  padding: 8px;
-}
-
-.cursed {
-  width: 400px;
 }

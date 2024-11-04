@@ -91,16 +91,6 @@ window.addEventListener("load", () => {
   const MOBILE: boolean = new URLSearchParams(location.search).has("mobile");
   if (MOBILE) document.children[0].classList.add("mobile");
 
-  document.getElementById("google")!.addEventListener("keypress", (e) => {
-    console.log(e);
-    if (e.key == "Enter") {
-      let url = new URL("https://google.com/search");
-      url.searchParams.set("q", (e.target as HTMLInputElement).value);
-      if (e.ctrlKey) window.open(url, "_blank");
-      else location.href = url.toString();
-    }
-  });
-
   window.addEventListener("focus", () => {
     if (is_april_fools() || Math.random() < 0.04) {
       let aud = document.createElement("audio");
@@ -199,66 +189,6 @@ window.addEventListener("load", () => {
     }, 20);
   });
   emoji.dispatchEvent(new MouseEvent("click", {}));
-
-  const frametime: number = 45;
-  let catgame: HTMLDivElement = document.getElementById(
-    "cat"
-  ) as HTMLDivElement;
-  let cat: HTMLImageElement = catgame.querySelector("img") as HTMLImageElement,
-    explosion: HTMLImageElement = catgame.querySelectorAll(
-      "img"
-    )[1] as HTMLImageElement,
-    explodebtn: HTMLButtonElement = catgame.querySelector(
-      "button"
-    ) as HTMLButtonElement,
-    secondarybtn: HTMLButtonElement = catgame.querySelectorAll(
-      "button"
-    )[1] as HTMLButtonElement,
-    aud_explode: HTMLAudioElement = document.getElementById(
-      "aud-explode"
-    ) as HTMLAudioElement,
-    aud_mewo: HTMLAudioElement = document.getElementById(
-      "aud-mewo"
-    ) as HTMLAudioElement,
-    aud_pop: HTMLAudioElement = document.getElementById(
-      "aud-pop"
-    ) as HTMLAudioElement;
-
-  let explosion_timeout: number | undefined;
-  explodebtn.addEventListener("click", () => {
-    explosion.onload = () => {};
-    clearTimeout(explosion_timeout);
-    let frame = 0;
-    explosion_timeout = setTimeout(function _() {
-      frame += 2;
-      explosion.src = `other/deltarune-explosion/${frame}.png`;
-      if (frame > 6) cat.style.display = "none";
-      explosion_timeout = undefined;
-      explosion.onload = () => {
-        explosion_timeout =
-          frame < 18
-            ? setTimeout(_, frametime * 2)
-            : (() => {
-                secondarybtn.disabled = false;
-                return undefined;
-              })();
-      };
-    }, frametime * 2);
-    explosion.style.display = "";
-    playaudio(aud_explode);
-    secondarybtn.innerText = "revive";
-    secondarybtn.disabled = true;
-  });
-  secondarybtn.addEventListener("click", () => {
-    cat.style.display == "none"
-      ? ((cat.style.display = ""),
-        (() => {
-          secondarybtn.innerText = "meow";
-          explosion.style.display = "none";
-          playaudio(aud_pop);
-        })())
-      : playaudio(aud_mewo);
-  });
 });
 
 function is_april_fools(): boolean {
@@ -271,19 +201,6 @@ function is_april_fools(): boolean {
 
 function rand_choice(list: any[]): any {
   return list[Math.floor(Math.random() * list.length)];
-}
-
-function playsound(src: string): HTMLAudioElement {
-  let aud = document.createElement("audio");
-  aud.src = src;
-  aud.play();
-  return aud;
-}
-
-function playaudio(aud: HTMLAudioElement): void {
-  aud.pause();
-  aud.currentTime = 0;
-  aud.play();
 }
 
 const EMOJI_NAMES: string[] = [

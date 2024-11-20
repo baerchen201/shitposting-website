@@ -7,12 +7,20 @@
       "option": "watch",
       "problemMatcher": ["$tsc-watch"],
       "group": "build",
-      "label": "live gogol translaet",
+      "label": "tsc - live gogol translaet",
       "runOptions": { "runOn": "folderOpen" },
       "presentation": {
-        "reveal": "never",
-        "panel": "dedicated",
-        "showReuseMessage": true
+        "reveal": "never"
+      }
+    },
+    {
+      "type": "shell",
+      "command": "sass --watch .",
+      "group": "build",
+      "label": "sass - live gogol translaet",
+      "runOptions": { "runOn": "folderOpen" },
+      "presentation": {
+        "reveal": "never"
       }
     }
   ]

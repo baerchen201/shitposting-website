@@ -15,24 +15,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  google_maps:
+  delpoy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: down load
+      - name: down load repo
         uses: actions/checkout@v4
-      - name: do some magic idk
-        uses: actions/configure-pages@v5
+      - name: down load npm
+        run: |
+          npm i -g sass typescript
 
-      - name: transform hooman lagunage to compuper lamgusge
+      - name: gogol translaet tsc > js
         run: tsc
+      - name: gogol translaet sass/scss > css
+        run: sass .
 
-      - name: upload among us
+      - name: upload artifac
         uses: actions/upload-pages-artifact@v3
         with:
           path: "."
-      - name: upload page (hooray)
+      - name: publish site
         id: deployment
         uses: actions/deploy-pages@v4

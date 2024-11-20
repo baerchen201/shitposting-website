@@ -1,0 +1,13 @@
+.c {
+  justify-content: center;
+  align-items: center;
+}
+.C {
+  display: flex;
+  @extend .c;
+}
+
+.fill-view {
+  height: 100vh;
+  width: 100vw;
+}

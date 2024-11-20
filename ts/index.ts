@@ -86,11 +86,11 @@ class youtubeTrack extends HTMLElement {
 window.customElements.define("youtube-video", youtubeVideo);
 window.customElements.define("youtube-track", youtubeTrack);
 
-window.addEventListener("load", () => {
-  // TODO: Add *proper* mobile detection
-  const MOBILE: boolean = new URLSearchParams(location.search).has("mobile");
-  if (MOBILE) document.children[0].classList.add("mobile");
+// TODO: Add *proper* mobile detection
+const MOBILE: boolean = new URLSearchParams(location.search).has("mobile");
+if (MOBILE) document.children[0].classList.add("mobile");
 
+window.addEventListener("load", () => {
   window.addEventListener("focus", () => {
     if (is_april_fools() || Math.random() < 0.04) {
       let aud = document.createElement("audio");

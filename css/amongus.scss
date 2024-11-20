@@ -6,10 +6,12 @@ amongus-bg {
 }
 
 amongus-star {
+  $size: 7px;
+
   display: inline-block;
   background: #fff;
-  height: 7px;
-  width: 7px;
+  height: $size;
+  width: $size;
   position: absolute;
   opacity: 0;
   border-radius: 35%;

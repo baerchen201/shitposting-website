@@ -15,7 +15,7 @@
     },
     {
       "type": "shell",
-      "command": "sass --watch .",
+      "command": "node ./node_modules/sass/sass --watch .",
       "group": "build",
       "label": "sass - live gogol translaet",
       "runOptions": { "runOn": "folderOpen" },

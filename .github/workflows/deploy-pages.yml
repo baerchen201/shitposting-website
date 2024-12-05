@@ -1,8 +1,7 @@
-name: "publish web site :>"
+name: "Build and deploy"
 
 on:
   push:
-    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -15,27 +14,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  delpoy:
+  build:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run build script
+        run: bash build.sh "${{ github.repository }}"
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "www"
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: down load repo
-        uses: actions/checkout@v4
-      - name: down load npm
-        run: |
-          npm i -g sass typescript
-
-      - name: gogol translaet tsc > js
-        run: tsc
-      - name: gogol translaet sass/scss > css
-        run: sass .
-
-      - name: upload artifac
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "."
-      - name: publish site
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

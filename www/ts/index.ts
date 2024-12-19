@@ -126,10 +126,11 @@ window.addEventListener("load", () => {
     if (!e.target) e.target = "_blank";
   }
 
-  let videos = document.getElementById("videos") as HTMLDivElement;
-  if (!MOBILE && videos.children.length % 2 != 0) videos.classList.add("odd");
+  let video_list = document.getElementById("videos") as HTMLDivElement;
+  if (!MOBILE && video_list.children.length % 2 != 0)
+    video_list.classList.add("odd");
 
-  let _v = videos.children;
+  let _v = video_list.children;
   for (let i = 0; i < _v.length; i++) {
     const video = _v[i];
     let _i = video.getElementsByTagName("img");
@@ -189,6 +190,14 @@ window.addEventListener("load", () => {
     }, 20);
   });
   emoji.dispatchEvent(new MouseEvent("click", {}));
+
+  let videos = document.getElementsByTagName("video");
+  Array.from(videos).forEach((e: HTMLVideoElement) => {
+    if (e.hasAttribute("tryautoplay"))
+      e.play().catch(() => {
+        console.warn("Failed to start playing video", e);
+      });
+  });
 });
 
 function is_april_fools(): boolean {

@@ -209,6 +209,7 @@ window.addEventListener("pageshow", () => {
     ) as HTMLHeadingElement[];
     const _CHARS = Array.from("abcdefghijklmnopqrstuvwxyz-_1234567890");
 
+    let scroll_queue: number[][] = [];
     heads.forEach((head: HTMLHeadingElement) => {
       if (
         location.hash ==
@@ -267,7 +268,32 @@ window.addEventListener("pageshow", () => {
         highlight.style.width = `${dim[3] - dim[1]}px`;
         document.body.insertBefore(highlight, elements[0]);
         console.log(elements[0]);
+        scroll_queue.push(dim);
       }
+    });
+    console.log(scroll_queue);
+    let _ = (i: number, j: boolean = false) => {
+        return j ? i * 500 + 600 : i * 500;
+      },
+      _scroll = (e: number[]) => {
+        scrollTo({ top: e[0], left: e[1], behavior: "smooth" });
+      };
+    scroll_queue.forEach((e: number[], i: number) => {
+      if (scroll_queue.length == 1) return _scroll(e);
+
+      if (i == 0) {
+        setTimeout(
+          () => {
+            _scroll(e);
+          },
+          _(scroll_queue.length, true),
+        );
+        return _scroll(e);
+      }
+
+      setTimeout(() => {
+        _scroll(e);
+      }, _(i));
     });
   }
 });

@@ -200,6 +200,78 @@ window.addEventListener("load", () => {
   });
 });
 
+window.addEventListener("pageshow", () => {
+  if (location.hash) {
+    let heads: HTMLHeadingElement[] = Array.from(document.body.children).filter(
+      (e: Element) => {
+        return e.tagName.match(/h[1-6]/i);
+      },
+    ) as HTMLHeadingElement[];
+    const _CHARS = Array.from("abcdefghijklmnopqrstuvwxyz-_1234567890");
+
+    heads.forEach((head: HTMLHeadingElement) => {
+      if (
+        location.hash ==
+        "#" +
+          ((i: string) => {
+            let out = Array.from(i.toLowerCase());
+            out.forEach((e: string, i: number) => {
+              if (!_CHARS.includes(e)) out[i] = "";
+              if (e == " ") out[i] = "+";
+            });
+            return out.join("");
+          })(head.innerHTML)
+      ) {
+        let _: boolean = false,
+          elements: HTMLElement[] = [];
+        Array.from(document.body.children).forEach((e: Element, i: number) => {
+          if (e == head) {
+            _ = true;
+          } else if (e.tagName.toUpperCase() == "HR") {
+            _ = false;
+          }
+          if (_) elements.push(e as HTMLElement);
+        });
+        let highlight = document.createElement("div");
+        highlight.classList.add("highlight");
+        let dim: number[] = [
+          Number.MAX_VALUE,
+          Number.MAX_VALUE,
+          Number.MIN_VALUE,
+          Number.MIN_VALUE,
+        ];
+        elements.forEach((e: HTMLElement) => {
+          let _dim = [
+            e.offsetTop,
+            e.offsetLeft,
+            e.offsetTop + e.offsetHeight,
+            e.offsetLeft + e.offsetWidth,
+          ];
+          console.log(_dim, e);
+          if (
+            _dim.every((e: number, i: number) => {
+              return e == 0;
+            })
+          )
+            return console.log(false);
+          _dim.forEach((e: number, i: number) => {
+            if (i < 2) {
+              if (e < dim[i]) dim[i] = e;
+            } else if (e > dim[i]) dim[i] = e;
+          });
+        });
+        console.log(dim);
+        highlight.style.top = `${dim[0] + document.body.offsetTop}px`;
+        highlight.style.left = `${dim[1] + document.body.offsetLeft}px`;
+        highlight.style.height = `${dim[2] - dim[0]}px`;
+        highlight.style.width = `${dim[3] - dim[1]}px`;
+        document.body.insertBefore(highlight, elements[0]);
+        console.log(elements[0]);
+      }
+    });
+  }
+});
+
 function is_april_fools(): boolean {
   let d = new Date();
   return (

@@ -18,7 +18,7 @@ class youtubeVideo extends HTMLElement {
 
     if (!data_id)
       throw new Error(
-        `Empty attribute data-id for youtube-video object ${this}`
+        `Empty attribute data-id for youtube-video object ${this}`,
       );
     if (!data_thumbnail) data_thumbnail = "img/youtube-thumbnail.svg";
     if (!data_channel_icon) data_channel_icon = "img/youtube-channel-icon.svg";
@@ -60,7 +60,7 @@ class youtubeTrack extends HTMLElement {
 
     if (!data_id)
       throw new Error(
-        `Empty attribute data-id for youtube-track object ${this}`
+        `Empty attribute data-id for youtube-track object ${this}`,
       );
     if (!data_image) data_image = "img/youtube-thumbnail.svg";
     if (!data_title) data_title = "";
@@ -141,7 +141,7 @@ window.addEventListener("load", () => {
 
   let emoji = document.getElementById("emoji") as HTMLImageElement;
   let emoji_history = document.getElementById(
-    "emoji-history"
+    "emoji-history",
   ) as HTMLDivElement;
 
   let _override: { src: string; alt: string } | null = null;

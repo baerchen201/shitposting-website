@@ -9,34 +9,43 @@ class AmongUsBg extends HTMLElement {
       i < 50; //* Number of stars here
       i++
     )
-      setTimeout(() => {
-        this.createStar();
-      }, Math.floor(Math.random() * 50 + 25) * i);
+      setTimeout(
+        () => {
+          this.createStar();
+        },
+        Math.floor(Math.random() * 50 + 25) * i,
+      );
 
     for (
       let i = 0;
       i < 7; //* Limit of amogi here
       i++
     )
-      setTimeout(() => {
-        this.createAmogus();
-      }, Math.floor(Math.random() * 10000 + 5000) * i);
+      setTimeout(
+        () => {
+          this.createAmogus();
+        },
+        Math.floor(Math.random() * 10000 + 5000) * i,
+      );
   }
 
   createStar() {
     let star: AmongUsStar = document.createElement(
-      "amongus-star"
+      "amongus-star",
     ) as AmongUsStar;
     star
       ._bg(
         Math.floor(Math.random() * 2250 + 3000),
         Math.floor(Math.random() * 1500 + 500),
-        Math.floor(Math.random() * 2250 + 3000)
+        Math.floor(Math.random() * 2250 + 3000),
       )
       .then(() => {
-        setTimeout(() => {
-          this.createStar();
-        }, Math.floor(Math.random() * 200 + 50));
+        setTimeout(
+          () => {
+            this.createStar();
+          },
+          Math.floor(Math.random() * 200 + 50),
+        );
         star.remove();
       });
     this.appendChild(star);
@@ -44,19 +53,22 @@ class AmongUsBg extends HTMLElement {
 
   createAmogus() {
     let amogus: AmongUsAmogus = document.createElement(
-      "amongus-amogus"
+      "amongus-amogus",
     ) as AmongUsAmogus;
     amogus
       ._bg(
         1.5,
         Math.random() * 100 + 50,
         "x-",
-        (Math.random() * 0.75 + 0.2) * (Math.random() < 0.4 ? -1 : 1)
+        (Math.random() * 0.75 + 0.2) * (Math.random() < 0.4 ? -1 : 1),
       )
       .then(() => {
-        setTimeout(() => {
-          this.createAmogus();
-        }, Math.floor(Math.random() * 3000 + 500));
+        setTimeout(
+          () => {
+            this.createAmogus();
+          },
+          Math.floor(Math.random() * 3000 + 500),
+        );
         amogus.remove();
       });
     this.appendChild(amogus);
@@ -105,7 +117,7 @@ class AmongUsAmogus extends HTMLElement {
     speed: number = 1,
     scale: number = 100,
     direction: "x+" | "x-" | "y+" | "y-" = "x+",
-    rspeed: number = 1
+    rspeed: number = 1,
   ): Promise<void> {
     this.style.top =
       direction.charAt(0) == "x"
@@ -123,7 +135,7 @@ class AmongUsAmogus extends HTMLElement {
     speed: number = 1,
     scale: number = 100,
     direction: "x+" | "x-" | "y+" | "y-" = "x+",
-    rspeed: number = 1
+    rspeed: number = 1,
   ): Promise<void> {
     return new Promise((resolve, reject) => {
       this.style.height = this.style.width = `${scale}px`;
@@ -138,11 +150,11 @@ class AmongUsAmogus extends HTMLElement {
         ],
         {
           duration: Math.floor(
-            Math.abs((Math.random() * 1250 + 1250) / rspeed)
+            Math.abs((Math.random() * 1250 + 1250) / rspeed),
           ),
           iterations: Infinity,
           direction: rspeed > 0 ? "normal" : "reverse",
-        }
+        },
       );
       let _b = `${-scale}px`;
       let _anim: Keyframe[];

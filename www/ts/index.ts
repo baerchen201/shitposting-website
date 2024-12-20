@@ -207,7 +207,7 @@ window.addEventListener("pageshow", () => {
         return e.tagName.match(/h[1-6]/i);
       },
     ) as HTMLHeadingElement[];
-    const _CHARS = Array.from("abcdefghijklmnopqrstuvwxyz-_1234567890");
+    const _CHARS = Array.from("abcdefghijklmnopqrstuvwxyz-_1234567890 ");
 
     let scroll_queue: number[][] = [];
     heads.forEach((head: HTMLHeadingElement) => {
@@ -215,12 +215,13 @@ window.addEventListener("pageshow", () => {
         location.hash ==
         "#" +
           ((i: string) => {
-            let out = Array.from(i.toLowerCase());
+            let out: string[] = Array.from(i.trim().toLowerCase());
             out.forEach((e: string, i: number) => {
               if (!_CHARS.includes(e)) out[i] = "";
-              if (e == " ") out[i] = "+";
             });
-            return out.join("");
+            let _ = out.join("").trim().replace(/ /g, "+");
+            console.info(i.trim() + ":", _);
+            return _;
           })(head.innerHTML)
       ) {
         let _: boolean = false,
@@ -248,7 +249,6 @@ window.addEventListener("pageshow", () => {
             e.offsetTop + e.offsetHeight,
             e.offsetLeft + e.offsetWidth,
           ];
-          console.log(_dim, e);
           if (
             _dim.every((e: number, i: number) => {
               return e == 0;
@@ -261,22 +261,19 @@ window.addEventListener("pageshow", () => {
             } else if (e > dim[i]) dim[i] = e;
           });
         });
-        console.log(dim);
         highlight.style.top = `${dim[0] + document.body.offsetTop}px`;
         highlight.style.left = `${dim[1] + document.body.offsetLeft}px`;
         highlight.style.height = `${dim[2] - dim[0]}px`;
         highlight.style.width = `${dim[3] - dim[1]}px`;
         document.body.insertBefore(highlight, elements[0]);
-        console.log(elements[0]);
         scroll_queue.push(dim);
       }
     });
-    console.log(scroll_queue);
     let _ = (i: number, j: boolean = false) => {
         return j ? i * 500 + 600 : i * 500;
       },
       _scroll = (e: number[]) => {
-        scrollTo({ top: e[0], left: e[1], behavior: "smooth" });
+        scrollTo({ top: e[0], behavior: "smooth" });
       };
     scroll_queue.forEach((e: number[], i: number) => {
       if (scroll_queue.length == 1) return _scroll(e);

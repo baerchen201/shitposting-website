@@ -164,6 +164,35 @@
     </div>
     <hr />
 
+    <h2>Custom anchor system</h2>
+    <h3>without using ids</h3>
+    <h3>click to test:</h3>
+    <hr style="display: none" />
+    <h4 onclick='location.hash="#test";location.reload()'>Test</h4>
+    <hr style="display: none" />
+    <h4 onclick='location.hash="#test+2";location.reload()'>Test 2</h4>
+    <hr style="display: none" />
+    <h4 onclick='location.hash="#test+multiple";location.reload()'>
+      test (multiple)
+    </h4>
+    <hr style="display: none" />
+    <h4 onclick='location.hash="#among+us";location.reload()'>among us</h4>
+    <hr style="display: none" />
+    <h4
+      onclick='location.hash="#lt+symbols+are+ignored+except+-+and+_";location.reload()'
+    >
+      .,()""[]{}ß?! &lt;== symbols are ignored (except - and _)
+    </h4>
+    <hr style="display: none" />
+    <h4 onclick='location.hash="#test+multiple";location.reload()'>
+      Test [multiple]
+    </h4>
+    <hr style="display: none" />
+    <h4 onclick='location.hash="#test+multiple";location.reload()'>
+      TEST ....m..u..l..t..i..p..l..e+#+
+    </h4>
+    <hr />
+
     <h2 style="text-transform: lowercase">I use Arch, btw</h2>
     <img
       style="height: 350px"

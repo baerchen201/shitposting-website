@@ -1,0 +1,46 @@
+christmas-bg {
+  display: inline-block;
+  background: #000;
+  min-height: 200px;
+  min-width: 350px;
+}
+
+christmas-snowflake {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  z-index: 2;
+
+  &.variant0 {
+    background-image: url(../../img/snowflake/0.svg);
+  }
+  &.variant1 {
+    background-image: url(../../img/snowflake/1.svg);
+  }
+  &.variant2 {
+    background-image: url(../../img/snowflake/2.svg);
+  }
+  &.variant3 {
+    background-image: url(../../img/snowflake/3.svg);
+  }
+  &.variant4 {
+    background-image: url(../../img/snowflake/4.svg);
+  }
+  &.variant5 {
+    background-image: url(../../img/snowflake/5.svg);
+  }
+  &.variant6 {
+    background-image: url(../../img/snowflake/6.svg);
+  }
+  &.variant7 {
+    background-image: url(../../img/snowflake/7.svg);
+  }
+  &.variant8 {
+    background-image: url(../../img/snowflake/8.svg);
+  }
+  &.variant9 {
+    background-image: url(../../img/snowflake/9.svg);
+  }
+}

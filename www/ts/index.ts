@@ -91,6 +91,18 @@ const MOBILE: boolean = new URLSearchParams(location.search).has("mobile");
 if (MOBILE) document.children[0].classList.add("mobile");
 
 window.addEventListener("load", () => {
+  let date = new Date();
+  if (date.getMonth() == 11)
+    document.body.insertBefore(
+      document.createElement("christmas-bg"),
+      document.body.firstChild,
+    );
+  else
+    document.body.insertBefore(
+      document.createElement("amongus-bg"),
+      document.body.firstChild,
+    );
+
   window.addEventListener("focus", () => {
     if (is_april_fools() || Math.random() < 0.04) {
       let aud = document.createElement("audio");

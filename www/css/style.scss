@@ -358,3 +358,29 @@ youtube-track > a {
     width: 100px;
   }
 }
+
+#oiiai {
+  user-select: none;
+  width: 800px;
+  height: 500px;
+
+  > img {
+    @extend #oiiai;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:last-of-type {
+      display: none;
+    }
+  }
+
+  &.active > img:last-of-type {
+    display: initial;
+  }
+  &.active > img:not(:last-of-type) {
+    display: none;
+  }
+
+  position: relative;
+}

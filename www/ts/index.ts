@@ -210,6 +210,22 @@ window.addEventListener("load", () => {
         console.warn("Failed to start playing video", e);
       });
   });
+
+  let oiiai: HTMLDivElement = document.getElementById(
+    "oiiai",
+  ) as HTMLDivElement;
+  oiiai.querySelector("img")!.addEventListener("mousedown", () => {
+    oiiai.classList.add("active");
+  });
+  oiiai.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    return false;
+  });
+  ["mouseup", "mouseleave", "dragstart", "dragend"].forEach((e) => {
+    window.addEventListener(e, () => {
+      oiiai.classList.remove("active");
+    });
+  });
 });
 
 window.addEventListener("pageshow", () => {

@@ -216,6 +216,8 @@ window.addEventListener("load", () => {
   ) as HTMLDivElement;
   oiiai.querySelector("img")!.addEventListener("mousedown", () => {
     oiiai.classList.add("active");
+    oiiai.querySelector("audio")!.currentTime = 0.02;
+    oiiai.querySelector("audio")!.play();
   });
   oiiai.addEventListener("contextmenu", (e) => {
     e.preventDefault();
@@ -224,6 +226,7 @@ window.addEventListener("load", () => {
   ["mouseup", "mouseleave", "dragstart", "dragend"].forEach((e) => {
     window.addEventListener(e, () => {
       oiiai.classList.remove("active");
+      oiiai.querySelector("audio")!.pause();
     });
   });
 });

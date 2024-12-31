@@ -92,7 +92,7 @@ if (MOBILE) document.children[0].classList.add("mobile");
 
 window.addEventListener("load", () => {
   let date = new Date();
-  if (date.getMonth() == 11)
+  if (date.getMonth() == 11 || (date.getMonth() == 0 && date.getDate() < 6))
     document.body.insertBefore(
       document.createElement("christmas-bg"),
       document.body.firstChild,

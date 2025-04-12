@@ -74,9 +74,23 @@
       .p > div {
         display: none;
       }
+
+      button {
+        position: fixed;
+        bottom: 8px;
+        right: 8px;
+        height: fit-content;
+        width: fit-content;
+      }
     </style>
   </head>
   <body>
+    <video
+      src="vid/crash.mp4"
+      preload="auto"
+      onended="this.classList.add('a')"
+      onplay="document.body.classList.add('p')"
+    ></video>
     <script>
       let i = 10;
       (function _() {
@@ -102,22 +116,28 @@
         }
       })();
     </script>
-    <video
-      src="vid/crash.mp4"
-      preload="auto"
-      onended="this.classList.add('a')"
-      onplay="document.body.classList.add('p')"
-    ></video>
     <span>
-      <span style="font-size: 100px; font-weight: 900">404</span>
-      <span style="font-size: 70px; font-weight: 600">not foun</span>
+      <span
+        style="font-size: 100px; font-weight: 900; white-space: nowrap"
+        class="box2d"
+        >404</span
+      >
+      <span
+        style="font-size: 70px; font-weight: 600; white-space: nowrap"
+        class="box2d"
+        >not foun</span
+      >
       <a
         href="/shitposting-website/index.html"
         onclick="document.querySelector('video').remove()"
+        class="box2d"
       >
         &lt;
         <span>back to main</span></a
       >
     </span>
+
+    <script src="https://baerchen201.github.io/jubilant-octo-funicular/gravity.js"></script>
+    <button class="box2d" onclick="init();run()">funny button</button>
   </body>
 </html>
